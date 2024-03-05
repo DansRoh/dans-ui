@@ -1,5 +1,6 @@
 import React, {FC, ReactNode, createContext} from 'react';
 import useStore from "./useStore";
+import {FormItemProps} from "./formItem";
 
 export interface FormProps {
     name?: string;
@@ -11,7 +12,7 @@ export type IFormContext = Pick<ReturnType<typeof useStore>, 'dispatch' | 'field
     & Pick<FormProps, 'initialValues'>
 export const FormContext = createContext<IFormContext>({} as IFormContext)
 
-const Form: FC<FormProps> = (props) => {
+export const Form: FC<FormProps> = (props) => {
     const {name, children, initialValues} = props;
     const {form, fields, dispatch, validateField} = useStore()
     const passedContext: IFormContext = {
@@ -26,8 +27,6 @@ const Form: FC<FormProps> = (props) => {
             <FormContext.Provider value={passedContext}>
                 {children}
             </FormContext.Provider>
-            {JSON.stringify(form)}
-            {JSON.stringify(fields)}
         </form>
     );
 };

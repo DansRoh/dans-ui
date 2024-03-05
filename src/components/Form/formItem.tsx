@@ -16,7 +16,7 @@ export interface FormItemProps {
     validateTrigger?: string;
 }
 
-const FormItem: FC<FormItemProps> = (props) => {
+export const FormItem: FC<FormItemProps> = (props) => {
     const {
         label,
         name,

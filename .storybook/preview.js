@@ -13,7 +13,7 @@ export const parameters = {
   viewMode: 'docs',
   options: {
     storySort: {
-      order: ['Button 按钮','Form 表单'],
+      order: ['Icon','Button', 'Menu', 'Form'],
     },
   },
 }

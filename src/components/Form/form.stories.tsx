@@ -1,20 +1,13 @@
-import type {Meta, StoryFn, StoryObj} from '@storybook/react'
+import type {Meta, StoryFn} from '@storybook/react'
 import React from 'react';
 import Form from './index'
 import Item from './formItem'
 
 const meta: Meta<typeof Form> = {
-    title: 'Form 表单',
+    title: 'Form',
     id: 'Form',
     tags: ['autodocs'],
     component: Form,
-    decorators: [
-        (Story) => (
-            <div style={{width: 550}}>
-                <Story />
-            </div>
-        )
-    ]
 }
 
 export default meta;

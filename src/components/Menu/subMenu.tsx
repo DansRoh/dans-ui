@@ -1,6 +1,8 @@
 import React, {Children, cloneElement, FC, FunctionComponentElement, ReactNode, useContext, useState, MouseEvent} from 'react';
 import {MenuContext} from "./menu";
 import classNames from "classnames";
+import Transition from "../Transition";
+import Icon from "../Icon";
 
 export interface SubMenuProps {
     title: string;
@@ -56,9 +58,15 @@ const SubMenu:FC<SubMenuProps> = (props) => {
         })
 
         return (
-            <ul className={subMenuClasses}>
-                {childrenComponent}
-            </ul>
+            <Transition
+                in={menuOpen}
+                timeout={300}
+                animation="zoom-in-top"
+            >
+                <ul className={subMenuClasses}>
+                    {childrenComponent}
+                </ul>
+            </Transition>
         )
     }
 
@@ -66,6 +74,7 @@ const SubMenu:FC<SubMenuProps> = (props) => {
         <li key={index} className={classes} {...hoverEvents}>
             <div className="submenu-title" {...clickEvents}>
                 {title}
+                <Icon icon="angle-down" className="arrow-icon"/>
             </div>
             { renderChildren() }
         </li>

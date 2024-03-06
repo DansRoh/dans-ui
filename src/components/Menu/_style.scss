@@ -50,7 +50,6 @@
     }
   }
   .dans-submenu {
-    display: none;
     list-style:none;
     padding-left: 0;
     white-space: nowrap;
@@ -66,7 +65,6 @@
     }
   }
   .dans-submenu.menu-opened {
-    display: block;
   }
 }
 .menu-horizontal {

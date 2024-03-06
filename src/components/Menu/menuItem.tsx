@@ -7,7 +7,7 @@ export interface MenuItemProps {
     disabled?: boolean;
     className?: string;
     style?: React.CSSProperties;
-    children?: ReactNode
+    children?: ReactNode;
 }
 const MenuItem: FC<MenuItemProps> = (props) => {
     const { index,disabled,className,style,children } = props

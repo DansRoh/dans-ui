@@ -72,4 +72,5 @@ const SubMenu:FC<SubMenuProps> = (props) => {
     );
 };
 SubMenu.displayName = 'SubMenu'
+export type subMenuType = typeof SubMenu
 export default SubMenu;

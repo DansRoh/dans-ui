@@ -1,41 +1,50 @@
+import {Meta, StoryFn} from '@storybook/react';
+import Menu from "./index";
 import React from 'react';
-import {Meta, StoryObj} from "@storybook/react";
-import {Story} from "@storybook/blocks";
-import Menu from "./menu";
-import Item from "./menuItem"
+import Item from "./menuItem";
 import SubMenu from "./subMenu";
 
 const meta: Meta<typeof Menu> = {
     title: 'Menu',
     id: 'Menu',
-    tags: ['autodocs'],
-    args: {mode: "vertical", defaultOpenSubMenus: ['3']},
     component: Menu,
-    decorators: [
-        (Story) => (
-            <div>
-                <Story></Story>
-            </div>
-        )
-    ]
+    tags: ['autodocs'],
+    args: {
+        defaultIndex: '1'
+    }
 }
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof Menu>;
+const Template: StoryFn<typeof Menu> = (args) => (
+    <Menu {...args}>
+        <Item>
+            选项一
+        </Item>
+        <Item>
+            选项二
+        </Item>
+        <Item disabled>
+            选项三
+        </Item>
+        <SubMenu title={'下拉选项'}>
+            <Item>
+                4-1
+            </Item>
+            <Item>
+                4-2
+            </Item>
+        </SubMenu>
+    </Menu>
+)
 
-export const BasicMenu: Story = {
-    render: (args) => (
-        <Menu {...args}>
-            <Item>你好</Item>
-            <Item>中午和i</Item>
-            <Item>撒的发大水</Item>
-            <SubMenu title={'选项1'}>
-                <Item>1-1</Item>
-                <Item>1-2</Item>
-                <Item>1-3</Item>
-            </SubMenu>
-        </Menu>
-    )
+export const DefaultMenu = Template.bind({})
+DefaultMenu.storyName = '默认Menu'
+
+export const ClickMenu = Template.bind({})
+ClickMenu.args = {
+    defaultIndex: '0',
+    mode: 'vertical'
 }
+ClickMenu.storyName = '纵向Menu'
 

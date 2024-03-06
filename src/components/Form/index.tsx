@@ -5,7 +5,7 @@ import Item, { FormItemProps } from './formItem'
 export type IFormComponent = typeof Form & {
     Item: FC<FormItemProps>
 }
-const TransForm: IFormComponent = Form as IFormComponent
+export const TransForm: IFormComponent = Form as IFormComponent
 TransForm.Item = Item
 
 export default TransForm;

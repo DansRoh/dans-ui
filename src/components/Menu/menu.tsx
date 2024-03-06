@@ -14,7 +14,7 @@ export interface MenuProps {
     defaultOpenSubMenus?: string[];
 }
 
-interface IMenuContext {
+export interface IMenuContext {
     index: string;
     onSelect?: SelectCallback;
     mode?: MenuMode;

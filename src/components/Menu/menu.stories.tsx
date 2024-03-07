@@ -1,5 +1,5 @@
 import type {Meta, StoryFn} from '@storybook/react';
-import Menu from "./index";
+import Menu from "./menu";
 import React from 'react';
 import Item from "./menuItem";
 import SubMenu from "./subMenu";
@@ -11,7 +11,7 @@ const meta: Meta<typeof Menu> = {
     tags: ['autodocs'],
     args: {
         defaultIndex: '1'
-    }
+    },
 }
 
 export default meta

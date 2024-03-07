@@ -21,7 +21,7 @@ export interface IMenuContext {
     defaultOpenSubMenus?: string[];
 }
 export const MenuContext = createContext<IMenuContext>({index: '0'})
-const Menu: React.FC<MenuProps> = (props) => {
+export const Menu: React.FC<MenuProps> = (props) => {
     const { defaultIndex,className,mode,style,onSelect,children,defaultOpenSubMenus} = props;
     const [currentActive, setCurrentActive] = useState(defaultIndex)
     const classes = classNames("dans-menu", className, {

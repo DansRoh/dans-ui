@@ -10,7 +10,7 @@ export interface SubMenuProps {
     children?: ReactNode;
     className?: string;
 }
-const SubMenu:FC<SubMenuProps> = (props) => {
+export const SubMenu:FC<SubMenuProps> = (props) => {
     const { title,index,className,children} = props
     const context = useContext(MenuContext)
     const openedSubMenus = context.defaultOpenSubMenus as Array<string>
